@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 
 
 #importing data using pandas
@@ -20,3 +21,7 @@ x = (x_data - np.min(x_data)) / (np.max(x_data) - np.min(x_data))
 
 print(x)
 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=75)
+
+LR = LogisticRegression()
+LR.fit(x_train,y_train)
