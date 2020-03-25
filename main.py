@@ -19,9 +19,13 @@ x_data = data.drop('RainTomorrow', axis=1)
 #feature scaling
 x = (x_data - np.min(x_data)) / (np.max(x_data) - np.min(x_data))
 
-print(x)
-
+#using Logistic regression model from sklearn
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=75)
 
 LR = LogisticRegression()
 LR.fit(x_train,y_train)
+
+pred = LR.predict(x_test)
+
+print(LR.score(x_test,y_test))
+
