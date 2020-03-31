@@ -27,5 +27,6 @@ LR.fit(x_train,y_train)
 
 pred = LR.predict(x_test)
 
+#obtaining score for test dataset
 print(LR.score(x_test,y_test))
 
